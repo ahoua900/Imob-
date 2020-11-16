@@ -1,0 +1,52 @@
+﻿@model ImobPlus.Models.Investir
+
+    <div class="container">
+
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+
+            <div class="formulaire">
+                <div class="title__titre--form">
+                    <span>
+                        <a href="@Url.Action("Index", "Construire")"><h2>Investir</h2></a>
+                    </span>
+                </div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        @Html.TextBoxFor(model => model.NameInvest, new { type = "text", placeholder = "Votre nom" })
+                        @Html.ValidationMessageFor(model => model.NameInvest, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        @Html.TextBoxFor(model => model.EmailInvest, new { type = "email", placeholder = "Adresse mail" })
+                        @Html.ValidationMessageFor(model => model.EmailInvest, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        @Html.TextBoxFor(model => model.TypeInvest, new { type = "text", placeholder = "Type d'investissement" })
+                        @Html.ValidationMessageFor(model => model.TypeInvest, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                @Html.TextAreaFor(m => m.MessageInvest, new { placeholder = "Write..." , value="Bonjour chers agents de imob+ je souhaiterais investir dans l'immobilier raison pour laquelle je vous contact donc merci de m'apporter votre aide  Cordialement" })
+                @Html.ValidationMessageFor(m => m.MessageInvest, "", new { @class = "text-danger" })
+
+                @* <textarea></textarea>*@
+
+                <input type="submit" value="Envoyer" class="btn-submit">
+            </div>
+
+        }
+
+        @if (ViewBag.Message != null)
+        {
+            <p style="color:red;">@ViewBag.Message</p>
+        }
+    </div>
+

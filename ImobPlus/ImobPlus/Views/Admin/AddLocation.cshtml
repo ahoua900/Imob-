@@ -1,0 +1,97 @@
+﻿@model ImobPlus.Models.Post
+
+@{
+    ViewBag.Title = "AddLocation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+    <div class="col-md-10 list-location">
+        <div class="title-page">
+            <h3>Locations /Achats</h3>
+            <a href="~/Admin/Admin" class="btn btn-danger"> <span style="font-weight: bold;">< </span>Retour</a>
+        </div>
+        <div class="container">
+            @using (Html.BeginForm("AddLocation", "Admin", FormMethod.Post, new { enctype="multipart/form-data"}))
+            {
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor( x => x.Name_Bailleur)<span style="color: red">*</span>
+                                @Html.TextBoxFor(x => x.Name_Bailleur, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Name_Bailleur,"", new { @class="text-danger"})
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Email_Bailleur)<span style="color: red">*</span>
+                                @Html.TextBoxFor(x => x.Email_Bailleur, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Email_Bailleur, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Contact_Bailleur)<span style="color: red">*</span>
+                                @Html.TextBoxFor(x => x.Contact_Bailleur, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Contact_Bailleur, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Describe)<span style="color: red">*</span>
+                                @Html.TextAreaFor(x => x.Describe, new { @class = "form-control", @placeholder = "Grande villa de 5 chambres, chaque chambre possède uen baignoire..." })
+                                @Html.ValidationMessageFor(x => x.Describe, "", new { @class = "text-danger"})
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.nbre_Chambres)@*<span style="color: red">*</span>*@
+                                @Html.TextBoxFor(x => x.nbre_Chambres, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.nbre_Chambres, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.nbre_Douches)@*<span style="color: red">*</span>*@
+                                @Html.TextBoxFor(x => x.nbre_Douches, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.nbre_Douches, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.nbre_Cuisines)@*<span style="color: red">*</span>*@
+                                @Html.TextBoxFor(x => x.nbre_Cuisines, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.nbre_Cuisines, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Location)<span style="color: red">*</span>
+                                @Html.TextBoxFor(x => x.Location, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Location, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Price)<span style="color: red">*</span>
+                                @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Price, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Mini_Describe)<span style="color: red">*</span>
+                                @Html.TextBoxFor(x => x.Mini_Describe, new { @class = "form-control", @placeholder = "Villa 5 pièces" })
+                                @Html.ValidationMessageFor(x => x.Mini_Describe, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" name="Type">
+                                    <option value="Maison">Maison</option>
+                                    <option value="Terrain">Terrain</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" name="Choix">
+                                    <option value="En Location">En Location</option>
+                                    <option value="En Vente">En Vente</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(x => x.Img_Post)<span style="color: red">*</span>
+                                <input type="file" class="form-control" name="Img_Post" id="Img_Post">
+                                @Html.ValidationMessageFor(x => x.Img_Post, "", new { @class = "text-danger" })
+                            </div>
+
+                            @Html.HiddenFor(x => x.Id_Post)
+                            <button type="submit" class="btn btn-warning">Sauvegarder</button>
+
+                        </div>
+                    </div>
+
+            }
+        </div>
+    </div>
+

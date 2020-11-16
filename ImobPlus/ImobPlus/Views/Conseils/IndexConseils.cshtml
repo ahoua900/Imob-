@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ImobPlus.Models.Conseiller> 
+@{
+    ViewBag.Title = "IndexConseils";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div class="container">
+        <div class="lour">
+            <h1>Comment pouvons nous vous aider chez IMOB<span>+</span></h1>
+            <div class="bar"></div>
+        </div>
+        <div class="row appels">
+            <div class="col-md-4 appele">
+                <h4>Discutez avec un conseiller en ligne</h4>
+                <p>Une organisation, une entreprise ou autres ;pour fonctionner efficacement et assurer sa pérennité</p>
+                <a href="~/Conseils/LigneConseil">Discutez maintenant</a>
+            </div>
+            <div class="col-md-4 ">
+                <img style="border-radius:100%" src="~/Content/Images/reservation.jpg" width="400" height="400" alt="Alternate Text" />
+            </div>
+        </div>
+        <div style="height:100px"></div>
+        <div class="row appels">
+            <div class="col-md-4 appele">
+                <h4>Discutez avec un conseiller directement</h4>
+                <p>Une organisation, une entreprise ou autres ;pour fonctionner efficacement et assurer sa pérennité</p>
+                <div class="tele">
+                    @if (ViewBag.non != null)
+                    {
+                        <div class="container">
+                            <div class="alert-danger">
+                                <p style="color:black">@ViewBag.non</p>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        var random = new Random().Next(1, Model.Count());
+                        foreach (var item in Model.Where(s=> s.Id == random))
+                        {
+                            <h4>Mr/Mme @item.NomPrenom</h4>
+                            <p>@item.Email</p>
+                            <p>+225 @item.Contact</p>
+                        }
+
+                    }
+
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                 @{ var randoms = new Random().Next(1, Model.Count());}
+                @foreach (var item in Model.Where(s=> s.Id == randoms))
+                {
+                <img style="border-radius:100%" src="~/Fichier/@item.Photo" width="400" height="400" alt="Alternate Text" />
+                }
+                
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,100 @@
+﻿@model ImobPlus.ViewModels.IndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CostumeLayout.cshtml";
+}
+
+<div class="container locations">
+    <div class="lour">
+        <h1><span>Louez et achetez</span> en toute sécurité chez IMOB<span>+</span></h1>
+        <div class="bar"></div>
+    </div>
+    <div class="row list-location">
+
+        @foreach (var item in Model.Posts)
+        {
+            <div class="col-12 col-md-4 card">
+                <img class="card-img-top" src="~/Fichier/@item.Img_Post" height="250" />
+                <div class="card-body">
+                    <h5 class="card-title">@item.Location</h5>
+                    <p class="card-text">@item.Mini_Describe</p>
+                    <p class="card-text-price">@item.Choix</p>
+                    <p class="card-text-price">@item.Price FCFA</p>
+                    <a class="btn btn-card" href="~/Achats/LocationDetails/@item.Id_Post" style="float:right;">Détails <span class="glyphicon glyphicon-arrow-right"></span></a>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+<div class="container">
+    <div class="lour">
+        <h1>Comment pouvons nous vous aider chez IMOB<span>+</span></h1>
+        <div class="bar"></div>
+    </div>
+    <div class="row conseil">
+        <div class="col-md-3 places">
+            <div class="logo">
+                <img src="/Content/Images/balance.png" width="40" height="40">
+            </div>
+            <div class="descrip">
+                <h4>Déménager</h4>
+                <p>Vous etes sur le point de changer d'appartement ou de déménager , mais vous n'avez pas encore trouvé le service approprié ; alors contactez IMOB+</p>
+                <a href="~/Construire/Demenager">Contacter</a>
+            </div>
+
+        </div>
+        <div class="col-md-3 places">
+            <div class="logo">
+                <img src="/Content/Images/balance.png" width="40" height="40">
+            </div>
+            <div class="descrip">
+                <h4>Construire</h4>
+                <p>Vous voulez contruire , mais vous n'avez pas encore trouvé les conseils fiable pour pouvoir demarrer votre construction  ; alors contactez IMOB+</p>
+                <a href="~/Construire/Contruire">Contacter</a>
+            </div>
+
+        </div>
+        <div class="col-md-3 places">
+            <div class="logo">
+                <img src="/Content/Images/balance.png" width="40" height="40">
+            </div>
+            <div class="descrip">
+                <h4>Investir</h4>
+                <p>Une organisation, une entreprise prete a vous suivre et vous montrer les techniques d'investissements les plus bénéfiques donc sans plus tarder contactez IMOB+</p>
+                <a href="~/Construire/Investir">Contacter</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="lour">
+            <h1>Comment pouvons nous vous aider chez IMOB<span>+</span></h1>
+            <div class="bar"></div>
+        </div>
+        <div class="row appels">
+            <div class="col-md-4 appel">
+                <h4>Discutez avec un conseiller en ligne</h4>
+                <p>Une organisation, une entreprise ou autres ;pour fonctionner efficacement et assurer sa pérennité</p>
+                <a href="~/Conseils/IndexConseils">Discutez maintenant</a>
+            </div>
+            <div class="col-md-4 appel">
+                <h4>Discutez avec un conseiller directement</h4>
+                <p>Une organisation, une entreprise ou autres ;pour fonctionner efficacement et assurer sa pérennité</p>
+                <a href="~/Conseils/LigneConseil">Contactez maintenant</a>
+            </div>
+        </div>
+
+        <div class="row propos">
+            <div class="col-md-4">
+                <img src="~/Content/Images/passage.jpg" height="400" width="400" style="border-radius:50%"/>
+            </div>
+            <div class="col-md-4 foots">
+                <h5>A propos de IMOB<span>+</span></h5>
+                <div class="bars"></div>
+                <p>IMOB+ est une entreprise ivoirienne basée a ANGRE GESTOCI qui par sa force et son expertiseaccompagne ses client désireux de s'investir dans l'immobilier ou acheter des maison ou terrains a mieux etre orientés et d'y trouver ce dont ils ont besoin .</p>
+            </div>
+        </div>
+    </div>
+</div>
+

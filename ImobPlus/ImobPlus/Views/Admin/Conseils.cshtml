@@ -1,0 +1,82 @@
+﻿@model ImobPlus.ViewModels.IndexViewModel
+
+@{
+    ViewBag.Title = "Conseils";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+    <div class="col-md-10 list-location">
+        @if (ViewBag.supe != null)
+        {
+            <div class="container">
+                <div class="alert-success">
+                    <p>@ViewBag.supe</p>
+                </div>
+            </div>
+        }
+        <div class="title-page">
+            <h3>Conseillers</h3>
+            <a href="~/Admin/AddConseiller" class="btn btn-dark">Ajouter <span style="font-weight: bold;">+</span></a>
+        </div>
+        <table>
+            <th>Id</th>
+            <th>Image</th>
+            <th>Nom et prenoms</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>A propos</th>
+            <th>Disponible</th>
+            <th>Update</th>
+            <th>Delete</th>
+            @foreach (var item in Model.Conseillers)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td><img src="~/Fichier/@item.Photo" width="60" height="60"></td>
+                    <td>@item.NomPrenom</td>
+                    <td>@item.Email</td>
+                    <td>+225 @item.Contact</td>
+                    <td>
+                        @item.Apropos
+                    </td>
+                    <td style="color:red">@item.DIsponible</td>
+                    <td><a href="#" class="btn btn-warning">update</a></td>
+                    <td><a href="~/Admin/DeleteConseiller/@item.Id" class="btn btn-danger">delete</a></td>
+                </tr>
+            }
+
+        </table>
+        @if (ViewBag.sup != null)
+        {
+            <div class="container">
+                <div class="alert-success">
+                    <p>@ViewBag.sup</p>
+                </div>
+            </div>
+        }
+        <div class="title-page">
+            <h3>Conseils(préoccupations)</h3>
+        </div>
+        <table>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Préoccupation</th>
+            <th>Delete</th>
+            @foreach (var item in Model.Liconseils)
+            {
+                <tr>
+                    <td>@item.Id_Liconseil</td>
+                    <td>@item.NomPrenom</td>
+                    <td>@item.Email</td>
+                    <td>
+                        @item.Message
+                    </td>
+                    <td><a href="~/Admin/DeleteConseils/@item.Id_Liconseil" class="btn btn-danger">delete</a></td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+

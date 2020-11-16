@@ -1,0 +1,129 @@
+﻿@model ImobPlus.Models.Post
+
+@{
+    ViewBag.Title = "LocationDetails";
+}
+
+
+
+    <div class="container">
+        <div class="title-detail">
+            <h2 class="locaTitle">@Model.Location</h2>
+            <h4 class="det_h4">@Model.Mini_Describe</h4>
+            <h4 class="det_h4">Prix : <span style="color:#FFB814;">@Model.Price FCFA</span></h4>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <img src="~/Fichier/@Model.Img_Post" class="img-responsive img-thumbnail" />
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div class="column">
+                    <ul class="des">
+                        <li>
+                            <span><i class="fa fa-bed taille"></i></span>
+                            <p class="details"> @Model.nbre_Chambres Chambres</p>
+                        </li>
+                        <li>
+                            <span><i class="fa fa-home taille"></i></span>
+                            <p class="details"> @Model.nbre_Douches douche</p>
+                        </li>
+                        <li>
+                            <span><i class="fa fa-spoon taille"></i></span>
+                            <p class="details"> @Model.nbre_Cuisines Cuisine</p>
+                        </li>
+                        <li>
+                            <span><i class="fa fa-key taille"></i></span>
+                            <p class="details"> @Model.Choix</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 responsive_tabs">
+                <div class="describe_tab col-12">
+                    <ul class="title_des">
+                        <li class="title_des_item title_active"><span>Description</span></li>
+                    </ul>
+                    <div class="describe_tab_container">
+                        <p>
+                           @Model.Describe
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 responsive_tabs">
+                <div class="describe_tab col-12">
+                    <ul class="title_des">
+                        <li class="title_des_item title_active"><span>BAILLEUR</span></li>
+                    </ul>
+                    <div class="describe_tab_container2">
+                        <div class="col-12 col-md-6">
+                            <img class="img-responsive img-thumbnail" src="~/Content/Images/acceuil.jpg" />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="column">
+                                <ul class="des">
+                                    <li>
+                                        <span><i class="fa fa-user taille"></i></span>
+                                        <p class="details">@Model.Name_Bailleur</p>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-envelope taille"></i></span>
+                                        <p class="details">@Model.Email_Bailleur</p>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-phone taille"></i></span>
+                                        <p class="details">+225 @Model.Contact_Bailleur</p>
+                                    </li>
+                                    <li>
+                                        <button class="btn btn-card2" data-toggle="modal" data-target="#myModal">CONTACTEZ</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Form -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div style="padding:20px">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h6 class="modal-title" id="myModalLabel" style="font-weight:300; color:#FFB814; float:left">CONTACTEZ LE PROPRIETAIRE</h6>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post">
+                            <div class="row">
+                                <div class="form-group col-12 col-md-6">
+                                    <label for="name">Nom</label>
+                                    <input type="text" name="Nom" id="name" class="form-control" />
+                                </div>
+                                <div class="form-group col-12 col-md-6">
+                                    <label for="email">Email</label>
+                                    <input type="text" name="EmailCont" id="email" class="form-control" />
+                                </div>
+                            </div>
+                                <div class="form-group col-12 col-md-12">
+                                    <label for="msg">Message</label>
+                                    <textarea type="text" name="Message" rows="5" id="msg" class="form-control">Bonjour Mr Yann je souhaiterais acheter/louer votre maison raison pour laquelle je vous contacte,
+                                     cordialement</textarea>
+                                </div>                 
+
+                            <button type="submit" class="btn btn-primary">Envoyer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

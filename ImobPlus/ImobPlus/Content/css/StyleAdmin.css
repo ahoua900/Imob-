@@ -1,0 +1,83 @@
+body{
+margin: 0;
+padding:0;
+}
+.titles{
+width: 150px;
+height: 100em;
+padding: 10px;
+background-color: #000;
+}
+.titles h1{
+color: #fff;
+font-size: 23px;
+font-weight: bold;
+}
+.titles h1 span{
+color: #FFB814;
+font-size: 25px;
+font-weight: bold;
+}
+.list-nav{
+margin-left:-3em;
+margin-top: 3em;
+display: block;
+}
+.list-nav li{
+display: block;
+}
+.list-nav li a{
+text-decoration: none;
+padding: 10px;
+display: block;
+color: #FFB814;
+margin-bottom: 0.5em;
+}
+.list-nav li a:hover{
+font-weight: bold;
+text-decoration: none;
+background-color: #fff;
+transition: 1s;
+border-radius: 10px;
+}
+.sous-list{
+display: block;
+}
+.sous-list li{
+display: block;
+}
+.sous-list li a{
+text-decoration: none;
+padding: 5px;
+display: block;
+color: #fff;
+margin-bottom: 0.5em;
+}
+.sous-list li a:hover{
+font-weight: bold;
+text-decoration: none;
+background-color: #FFB814;
+transition: 1s;
+border-radius: 10px;
+}
+.list-location{
+width: auto;
+padding: 10px 20px;
+margin-left: -0.5em;
+}
+.title-page{
+margin-bottom: 1.5em;
+}
+table th{
+padding: 0px 15px;
+padding: 5px;
+background-color: #000;
+color: white;
+font-weight: bold;
+}
+table tr td{
+padding: 0px 15px;
+padding: 5px;
+color: black;
+}
+

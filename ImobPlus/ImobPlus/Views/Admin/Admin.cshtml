@@ -1,0 +1,60 @@
+﻿@model  IEnumerable<ImobPlus.Models.Post>
+
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+    <div class="col-md-10 list-location">
+        <div class="title-page">
+            <h3>Locations /Achats</h3>
+            <a href="~/Admin/AddLocation" class="btn btn-dark">Ajouter <span style="font-weight: bold;">+</span></a>
+        </div>
+        <table>
+            <th>Id</th>
+            <th>Image</th>
+            <th>Descrption</th>
+            <th>Prix</th>
+            <th>Choix</th>
+            <th>Proprietaire</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Statut</th>
+            <th>Update</th>
+            <th>Delete</th>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id_Post</td>
+                    <td><img src="~/Fichier/@item.Img_Post" width="60" height="60"></td>
+                    <td>@item.Mini_Describe</td>
+                    <td>@item.Price</td>
+                    <td>@item.Location</td>
+                    <td>@item.Name_Bailleur</td>
+                    <td>@item.Email_Bailleur</td>
+                    <td>@item.Contact_Bailleur</td>
+                    <td>@item.Choix</td>
+                    <td><a href="../Admin/EditPost/@item.Id_Post" class="btn btn-warning">Update</a></td>
+                    <td><button class="btn btn-danger" data-toggle="modal" data-target="#myModal">Delete</button></td>
+
+                </tr>
+
+            }
+        </table>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div style="padding:20px">
+                        <h6 class="modal-title" id="myModalLabel" style="font-weight:300; color:#FFB814; float:left">Suppression</h6>
+                    </div>
+                    <div class="modal-body">
+                        <p>Voulez vous le supprimer ?</p>
+                        <div class="row">
+                            <button class="btn close">Non</button>
+                            <button class="btn btn-danger">Oui</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,71 @@
+﻿@model ImobPlus.Models.Conseiller
+@{
+    ViewBag.Title = "AddConseiller";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+    <div class="col-md-10 list-location">
+        @if (ViewBag.error != null)
+        {
+            <div class="container">
+                <div class="alert-danger">
+                    <p>@ViewBag.error</p>
+                </div>
+            </div>
+        }
+        @if (ViewBag.su != null)
+        {
+            <div class="container">
+                <div class="alert-success">
+                    <p>@ViewBag.su</p>
+                </div>
+            </div>
+        }
+        <div class="title-page">
+            <h3>Locations /Achats</h3>
+            <a href="~/Admin/Conseils" class="btn btn-danger"> <span style="font-weight: bold;">< </span>Retour</a>
+        </div>
+        <div class="container">
+            <form method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Nom et prénom <span style="color: red">*</span></label>
+                            <input type="text" class="form-control" name="NomPrenom">
+                        </div>
+                        <div class="form-group">
+                            <label>Email <span style="color: red">*</span></label>
+                            <input type="text" class="form-control" name="Email">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Contact <span style="color: red">*</span></label>
+                            <input type="text" class="form-control" name="Contact">
+                        </div>
+                        <div class="form-group">
+                            <label>A propos <span style="color: red">*</span></label>
+                            <textarea type="text" rows="7" class="form-control" name="Apropos"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Photo <span style="color: red">*</span></label>
+                            <input type="file" class="form-control" name="Photo">
+                        </div>
+                        <div class="form-group">
+                            <label>Disponible <span style="color: red">*</span></label>
+                            <select type="text" class="form-control" name="Disponible">
+                                <option>En ligne</option>
+                                <option>En direct</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-warning">Sauvegarder</button>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+

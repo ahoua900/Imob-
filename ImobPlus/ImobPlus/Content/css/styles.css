@@ -1,0 +1,383 @@
+﻿body {
+margin: 0;
+padding: 0;
+}
+
+.main {
+background-image: url(/Content/Images/reservation.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+height: 50em;
+margin-bottom: 3em;
+}
+.maform{
+padding:20px;
+box-shadow: 0px 0px 17px -3px #000;
+}
+.maform input{
+height:50px;
+width:100%;
+}
+.mains {
+background-color: black;
+opacity: .8;
+height: 42em;
+}
+
+.headers {
+padding: 18px 27px;
+background-color: black;
+display: flex;
+}
+.tele{
+background-color:#444;
+padding:15px;
+}
+.tele h4{
+color:#FFB814;
+}
+.tele p {
+color: white;
+}
+.headers h1 {
+font-size: 41px;
+color: white;
+font-weight: bold;
+font-family: serif;
+margin-right: 11em;
+}
+
+.headers h1 span {
+color: #FFB814;
+}
+.headere {
+padding: 18px 27px;
+background-color: transparent;
+display: flex;
+}
+
+.headere h1 {
+font-size: 41px;
+color: white;
+font-weight: bold;
+font-family: serif;
+margin-right: 11em;
+}
+
+.headere h1 span {
+color: #FFB814;
+}
+.navbar {
+float: right;
+margin-left:7em;
+}
+
+.nav-link a {
+color: #FFB814;
+font-size: 18px;
+padding: 10px;
+}
+
+.nav-link a:hover {
+color: white;
+text-decoration: none;
+transition: 1s;
+background-color: #FFB814;
+border-radius: 10px;
+padding: 10px;
+}
+
+.nav-link .active {
+color: white;
+font-size: 18px;
+}
+
+.titre {
+padding: 27px;
+}
+
+.titre h1 {
+font-size: 60px;
+color: white;
+margin-top: 10%;
+}
+
+.titre h1 span {
+color: #FFB814;
+}
+
+.titre p {
+color: white;
+font-size: 20px;
+}
+
+.lour {
+text-align: center;
+padding: 20px;
+margin-bottom: 3em;
+}
+
+.locations {
+margin-bottom: 3em;
+}
+
+.lour h1 {
+font-size: 35px;
+}
+
+.lour h1 span {
+color: #FFB814;
+}
+
+.bar {
+background-color: #FFB814;
+height: 6px;
+width: 300px;
+margin-left: 12.2em;
+}
+
+.bar:hover {
+background-color: #FFB814;
+height: 6px;
+transition: 1s;
+width: 500px;
+cursor: pointer;
+margin-left: 12.2em;
+}
+
+.list-location {
+margin-left: 1em;
+}
+
+.img-top {
+height: 200px;
+width: 264px;
+}
+
+.place {
+padding: 0;
+background-color: #000;
+margin-right: 3em;
+}
+
+.poid {
+color: white;
+font-weight: bold;
+font-size: 20px;
+}
+
+.description {
+padding: 10px;
+color: white;
+}
+
+.prix {
+color: #FFB814;
+font-size: 20px;
+}
+
+.description button {
+margin-left: 4em;
+padding: 7px 25px;
+color: white;
+border-color: white;
+background-color: transparent;
+border: 3px solid;
+}
+
+.description button:hover {
+transition: 1s;
+color: #FFB814;
+cursor: pointer;
+border-radius: 10px;
+border: 3px solid #FFB814;
+}
+
+.logo {
+margin-left: 5em;
+height: 80px;
+padding: 19px;
+width: 80px;
+border-radius: 100%;
+border-color: red;
+border: 2px solid #FFB814;
+}
+
+.conseil {
+margin-left: 7em;
+}
+
+.places {
+border: 2px solid #F0F0F0;
+padding: 10px;
+border-radius: 40px;
+background-color: white;
+margin-right: 3em;
+}
+
+.descrip {
+padding: 10px;
+}
+
+.descrip h4 {
+text-align: center;
+font-size: 20px;
+font-weight: bold;
+}
+
+.descrip p {
+text-align: center;
+font-size: 13px;
+}
+
+.descrip a {
+text-decoration: none;
+padding: 7px 20px;
+background-color: #FFB814;
+color: white;
+text-align: center;
+border-color: transparent;
+border-radius: 30px;
+margin-left: 3em;
+}
+
+.descrip a:hover {
+transition: 1s;
+color: white;
+text-align: center;
+border-color: #FFB814;
+border: 2px solid;
+border-radius: 0px;
+margin-left: 3em;
+}
+
+.appels {
+margin-left: 5em;
+}
+
+.appel {
+    border: 2px solid #FFB814;
+    padding: 30px;
+    margin-right: 3em;
+    margin-left: 3em;
+}
+
+.appel h4 {
+text-align: center;
+font-size: 20px;
+font-weight: bold;
+}
+
+.appel p {
+text-align: center;
+font-size: 13px;
+}
+
+.appel a {
+text-decoration: none;
+padding: 7px 20px;
+background-color: #444;
+color: #FFB814;
+border-color: transparent;
+border-radius: 30px;
+margin-left:3em;
+}
+.appele {
+border: 2px solid #FFB814;
+padding: 30px;
+border-bottom-left-radius:20%;
+border-top-right-radius:20%;
+margin-right: 3em;
+margin-left: 3em;
+}
+
+.appele h4 {
+text-align: center;
+font-size: 20px;
+font-weight: bold;
+}
+
+.appele p {
+text-align: center;
+font-size: 13px;
+}
+
+.appele a {
+text-decoration: none;
+padding: 7px 20px;
+background-color: #444;
+color: #FFB814;
+border-color: transparent;
+border-radius: 30px;
+margin-left:3em;
+}
+.bars {
+background-color: #FFB814;
+height: 4px;
+width: 100px;
+}
+
+.bars:hover {
+background-color: #FFB814;
+height: 4px;
+transition: 1s;
+width: 300px;
+cursor: pointer;
+}
+
+footer {
+background-color: #000;
+margin-top: 10%;
+padding: 60px 80px;
+}
+.propos{
+padding:35px;
+margin-left:3em;
+}
+.foot {
+margin-top: 3%;
+color: black;
+}
+.foots {
+margin-top: 10%;
+color: black;
+margin-left: 8em;
+}
+
+.navbars {
+display: block;
+}
+
+.na {
+text-decoration: none;
+color: #FFB814;
+display: block;
+}
+
+.na a {
+font-size: 22px;
+margin-bottom: 3em;
+text-decoration: none;
+color: #FFB814;
+}
+
+.footh1 {
+font-size: 41px;
+color: white;
+font-weight: bold;
+font-family: serif;
+}
+
+.footh1 span {
+color: #FFB814;
+}
+
+.contac {
+border: 2px solid #FFB814;
+padding: 20px;
+color: white;
+}
+
+.contac h2 {
+color: #FFB814;
+}

@@ -1,0 +1,56 @@
+﻿@model ImobPlus.Models.Demenagement
+@{
+    ViewBag.Title = "Demenager";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-md-10 list-location">
+    <div class="title-page">
+        <h3>Services/ Déménager</h3>
+    </div>
+    <table>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Lieu Depart</th>
+        <th>Destination</th>
+        <th>Message</th>
+        <th>Delete</th>
+
+        @foreach (var item in ViewBag.Demenager)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.NameDem</td>
+                <td>@item.EmailDem</td>
+                <td>@item.DestinaDem</td>
+                <td>@item.LieuDepartDem</td>
+                <td>@item.MessagDem </td>
+                <td>
+                    <a href="~/Admin/DeletePostDemenager/@item.Id">
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">delete</button>
+                    </a>
+                </td>
+
+            </tr>
+        }
+
+
+    </table>
+    @* <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div style="padding:20px">
+                        <h6 class="modal-title" id="myModalLabel" style="font-weight:300; color:#FFB814; float:left">Suppression</h6>
+                    </div>
+                    <div class="modal-body">
+                        <p>Voulez vous le supprimer ?</p>
+                        <div class="row">
+                            <button class="btn close">Non</button>
+                            <button class="btn btn-danger">Oui</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+</div>

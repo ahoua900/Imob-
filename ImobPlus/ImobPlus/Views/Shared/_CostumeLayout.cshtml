@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IMOB+</title>
+
+    <!-- Mes styles -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/font-awesome-4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="stylesheet" href="~/Content/css/styles.css">
+    <link rel="stylesheet" href="~/Content/css/Stie.css">
+</head>
+<body>
+    <div class="main">
+        <div class="mains">
+            <header class="headere">
+                <h1>IMOB<span>+</span></span></h1>
+                <nav>
+                    <ul class="navbar">
+                        <li class="nav-link"><a class="active" href="~/Home/Index">Acceuil</a></li>
+                        <li class="nav-link"><a href="~/Achats/Location">Location/Achat</a></li>
+                        <li class="nav-link"><a href="~/Construire/Index">Services</a></li>
+                        <li class="nav-link"><a href="~/Conseils/IndexConseils">Conseils</a></li>
+                        <li class="nav-link"><a href="~/Contact/Contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="titre">
+                <h1>Tout pour<span> l’immobilier</span></h1>
+                <p>Faites nous confiance, louez ou achetez vos maisons et terrains avec nous sans toutefois vous perdre</p>
+            </div>
+
+        </div>
+    </div>
+    @RenderBody()
+    @Html.Partial("_Footer")
+</body>
+<!-- Mes scripts -->
+<script src="~/Content/js/jquery.min.js"></script>
+
+<script src="~/Content/js/bootstrap.min.js"></script>
+<script src="~/Content/js/app.js"></script>
+</html>

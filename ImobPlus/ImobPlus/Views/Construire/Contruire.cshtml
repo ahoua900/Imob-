@@ -1,0 +1,57 @@
+﻿@model ImobPlus.Models.Construire
+
+    <div class="container">
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+
+            <div class="formulaire">
+                <div class="title__titre--form">
+
+                    <span>
+                        <a href="@Url.Action("Index", "Construire")"><h2>Construire</h2></a>
+                    </span>
+                </div>
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        @Html.TextBoxFor(model => model.NameConst, new { type = "text", placeholder = "Votre nom" })
+                        @Html.ValidationMessageFor(model => model.NameConst, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        @Html.TextBoxFor(model => model.EmailConst, new { type = "email", placeholder = "Adresse mail" })
+                        @Html.ValidationMessageFor(model => model.EmailConst, "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        @Html.TextBoxFor(model => model.TypeConst,  new { type = "text", placeholder = "Type de construction" })
+                        @Html.ValidationMessageFor(model => model.TypeConst,  "", new { @class = "text-danger" })
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        @Html.TextBoxFor(model => model.LieuConst, new { type = "text", placeholder = "Lieu" })
+                        @Html.ValidationMessageFor(model => model.LieuConst, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                @Html.TextAreaFor(m => m.MessageConst, new { placeholder = "Write..." , value="Bonjour chers agents de imob+ je souhaiterais construire ma nouvelle maison raison pour laquelle je vous contact donc merci de m'apporter votre aide  Cordialement" })
+                @Html.ValidationMessageFor(m => m.MessageConst, "", new { @class = "text-danger" })
+                @*<textarea></textarea>*@
+
+                <input type="submit" value="Envoyer" class="btn-submit">
+            </div>
+
+        }
+
+        @if (ViewBag.Message != null)
+        {
+            <p style="color:red;">@ViewBag.Message</p>
+        }
+    </div>
+

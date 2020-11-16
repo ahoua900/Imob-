@@ -1,0 +1,25 @@
+﻿@model ImobPlus.Models.Contacts
+ <div class="container">
+    <form action="" method="post">
+        <div class="formulaire">
+            <div class="title__titre--form">
+                <span>
+                    <a href="@Url.Action("Index","Home")"><h2>Contactez-Nous</h2></a>
+                </span>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <input type="text" placeholder="Nom et prenom " name="NomPrenom">
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <input type="text" placeholder="Adresse email" name="Email">
+                </div>
+                <textarea type="text" rows="7" placeholder="Ecrivez votre preoccupation ici" name="Precoccupation"></textarea>
+            </div>
+            <input type="submit" value="Envoyer" class="btn-submit">
+        </div>
+    </form>
+</div>
+
+

@@ -1,0 +1,72 @@
+﻿@model ImobPlus.Models.Investir
+@{
+    ViewBag.Title = "Investir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-md-10 list-location">
+    <div class="title-page">
+        <h3>Services/ Investissement</h3>
+    </div>
+    <table>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Type d'investissement</th>
+        <th>Message</th>
+        <th>Delete</th>
+
+        @foreach (var item in ViewBag.Investir)
+        {
+            <tr>
+                <td>@item.IdInvest</td>
+                <td>@item.NameInvest</td>
+                <td>@item.EmailInvest</td>
+                <td>@item.TypeInvest</td>
+                <td>@item.MessageInvest </td>
+
+                <td>
+                    <a href="~/Admin/DeletePost/@item.IdInvest">
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#myModal">delete</button>
+                    </a>
+                </td>
+
+            </tr>
+        }
+
+
+        @*<tr>
+                <td>2</td>
+                <td>Ahoua Elvis</td>
+                <td>azerty@gmail.com</td>
+                <td>Immeuble R+2</td>
+                <td>
+                    Bonjour Chers agents de IMOB+ je souhaiterais investir dans l’immobilier raison pour laquelle je vous contact donc merci  de m’apporter votre aide,
+
+                    Cordialement
+                </td>
+                <td><button class="btn btn-danger" data-toggle="modal" data-target="#myModal">delete</button></td>
+
+            </tr>*@
+
+
+    </table>
+    @* <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div style="padding:20px">
+                        <h6 class="modal-title" id="myModalLabel" style="font-weight:300; color:#FFB814; float:left">Suppression</h6>
+                    </div>
+                    <div class="modal-body">
+                        <p>Voulez vous le supprimer ?</p>
+                        <div class="row">
+                            <button class="btn close">Non</button>
+                            <button class="btn btn-danger">Oui</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+
+</div>

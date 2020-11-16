@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ImobPlus.Models.Contacts>
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+    <div class="col-md-10 list-location">
+        @if (ViewBag.supe != null)
+        {
+            <div class="container">
+                <div class="alert-danger">
+                    <p>@ViewBag.supe</p>
+                </div>
+            </div>
+        }
+        <div class="title-page">
+            <h3>Contacts</h3>
+        </div>
+        <table>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Préoccupation</th>
+            <th>Delete</th>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id_Contact</td>
+                    <td>@item.NomPrenom</td>
+                    <td>@item.Email</td>
+                    <td>
+                        @item.Precoccupation
+                    </td>
+                    <td><a href="~/Admin/DeleteContact/@item.Id_Contact" class="btn btn-danger">delete</a></td>
+                </tr>
+            }
+        </table>
+
+    </div>
